@@ -1,0 +1,22 @@
+.DataCapture {
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+table {
+    border: 2px solid rgb(6, 7, 6);
+    width: auto;
+    height: 50px;
+}
+
+
+td {
+    text-align: center;
+}
+.form{
+      width: 300px;    
+}
