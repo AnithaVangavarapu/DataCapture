@@ -81,7 +81,7 @@ const DataCapture = () => {
             />
           </label>
           <button type="submit" onSubmit={handleSubmit}>Submit</button>
-          <button type="reset">Reset</button>
+          <button type="reset" >Reset</button>
         </form>
       </div>
       <div>
