@@ -1,22 +1,118 @@
+/* Container for the whole form */
 .DataCapture {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: auto;
+    margin: auto;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styles for Study Name, Protocol ID, etc. */
+  table {
     width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+  }
+  
+  table th {
+     
+    color: rgb(11, 11, 11);
+  }
+  
+  /* Form input field styles */
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
     display: inline-block;
-    justify-content: center;
-    align-items: center;
-    
-    
-}
-
-table {
-    border: 2px solid rgb(6, 7, 6);
-    width: auto;
-    height: 50px;
-}
-
-
-td {
-    text-align: center;
-}
-.form{
-      width: 300px;    
-}
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="date"],
+  form textarea,
+  form select {
+    width: 30%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form input[type="text"]:read-only {
+    background-color: #e9ecef;
+  }
+  
+  form textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  /* Button styles */
+  form button[type="submit"],
+  form button[type="button"] {
+    padding: 10px 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button[type="button"] {
+    background-color: #f44336;
+  }
+  
+  form button[type="submit"]:hover,
+  form button[type="button"]:hover {
+    opacity: 0.9;
+  }
+  
+  /* Styles for the Subjects Dashboard */
+  h2 {
+    margin-top: 30px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  /* 'Go' button style */
+  button {
+    padding: 10px 20px;
+    background-color: hsl(272, 92%, 46%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

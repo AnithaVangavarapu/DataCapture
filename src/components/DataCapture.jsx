@@ -1,20 +1,40 @@
 import "./DataCapture.css";
-import react from "react";
-import { useState,useEffect } from "react";
+import React, {useEffect,useState} from "react";
+import { useForm } from "react-hook-form";
 const DataCapture = () => {
-  const [subIni,setSubIni]=useState(" ");
-  const [subInf,setSubInf]=useState(" ");
-  const [enrollDate,setEnrollDate]=useState(" ");
-  const [comment,setComment]=useState(" ");
-
-  const handleSubmit=useEffect(()=>{
-      localStorage.setItem("subIni",JSON.stringify(subIni));
-      localStorage.setItem("subInf",JSON.stringify(subInf));
-      localStorage.setItem("enrollDate",JSON.stringify(enrollDate));
-      localStorage.setItem("comment",JSON.stringify(comment));
-
+  const {register,handleSubmit,reset, setValue}=useForm({
+    defaultValues: {
+      countryCode: "91",
+      siteCode: "91-002",
+      subjectInitials: "",
+      subjectInfoId: "",
+      enrollmentDate: "",
+      comments: ""
+    }
   });
+  const [isFormVisible, setFormVisible] = useState(false); 
+  // Load data from local storage when the component mounts
+  useEffect(() => {
+    const storedFormData = localStorage.getItem("formData");
+    if (storedFormData) {
+      const parsedFormData = JSON.parse(storedFormData);
+      // Populate form fields with saved values
+      Object.keys(parsedFormData).forEach((key) => {
+        setValue(key, parsedFormData[key]);
+      });
+    }
+  }, [setValue]);
+ // Function to handle form submission
+ const onSubmit = (data) => {
+  localStorage.setItem("formData", JSON.stringify(data));
+  alert("Form data has been saved to local storage!");
+};
 
+// Function to handle reset
+const handleReset = () => {
+  reset(); // Resets to default values
+  localStorage.removeItem("formData"); // Optional: Clear local storage
+};
   return (
     <div className="DataCapture">
       <div>
@@ -31,58 +51,74 @@ const DataCapture = () => {
           </tbody>
         </table>
       </div>
+      
       <div className="form">
-        <form onSubmit = {(e) => e.preventDefault()}>
-          <h2> Subject Registration</h2>
-          <label>
-            Country Code:
-            <input type="tel" defaultValue="91" />
-          </label>
+        {/* Button to toggle form visibility */}
+        <button onClick={() => setFormVisible(!isFormVisible)}>
+          Subject Registration
+        </button>
 
-          <label>
-            Site Code:
-            <input type="tel" defaultValue="91-002" />
-          </label>
+        {/* Conditional rendering: show form only when isFormVisible is true */}
+        {isFormVisible && (
+        <form onSubmit = {handleSubmit(onSubmit)}>
+          
+        <div>
+        <label>Country Code:</label>
+        <input
+          type="text"
+          {...register("countryCode")}
+          readOnly
+        />
+      </div>
 
-          <label>
-            Subject Initials:
-            <input 
-            type="text"
-            value={subIni}
-            onChange={(e) => setSubIni(e.target.value)}
-            />
-          </label>
+      <div>
+        <label>Site Code:</label>
+        <input
+          type="text"
+          {...register("siteCode")}
+          readOnly
+        />
+      </div>
 
-          <label>
-            Subject Infold:
-            <input 
-            type="text"
-            value={subInf}
-            onChange={(e) => setSubInf(e.target.value)}
-            />
-          </label>
+      <div>
+        <label>Subject Initials:</label>
+        <input
+          type="text"
+          {...register("subjectInitials", { required: true })}
+        />
+      </div>
 
-          <label>
-            Enrollment Date:
-            <input 
-            type="date"
-            value={enrollDate}
-            onChange={(e) => setEnrollDate(e.target.value)}
-            />
-          </label>
+      <div>
+        <label>Subject InfoId:</label>
+        <input
+          type="text"
+          {...register("subjectInfoId", { required: true })}
+        />
+      </div>
 
-          <label>
-            Comments:
-            <input
-             type="text" 
-             maxLength="200" 
-             value={comment}
-             onChange={(e) => setComment(e.target.value)}
-            />
-          </label>
-          <button type="submit" onSubmit={handleSubmit}>Submit</button>
-          <button type="reset" >Reset</button>
+      <div>
+        <label>Enrollment Date:</label>
+        <input
+          type="date"
+          {...register("enrollmentDate", { required: true })}
+        />
+      </div>
+
+      <div>
+        <label>Comments:</label>
+        <textarea
+          {...register("comments")}
+        />
+      </div>
+
+      <div>
+        <button type="submit">Submit</button>
+        <button type="button" onClick={handleReset}>
+          Reset
+        </button>
+      </div>
         </form>
+        )}
       </div>
       <div>
         <h2>Subjects Dashboard</h2>
