@@ -2,7 +2,7 @@ import "./DataCapture.css";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock,faSquare,faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faLock,faSquare,faCircleQuestion,faAsterisk,faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 const DataCapture = () => {
   const { register, handleSubmit, reset, setValue } = useForm({
@@ -40,6 +40,7 @@ const DataCapture = () => {
   };
   return (
     <div className="DataCapture">
+      <p>Data Capture</p>
       <div>
         <table>
           <tbody>
@@ -57,10 +58,13 @@ const DataCapture = () => {
 
       <div className="form">
         {/* Button to toggle form visibility */}
-        <button onClick={() => setFormVisible(!isFormVisible)}>
-          Subject Registration
+        
+        <button className="subject-registration" onClick={() => setFormVisible(!isFormVisible)}>
+          <span className="sug">Subject Registration</span>
+          <FontAwesomeIcon icon={faAngleDown}/>
         </button>
-
+       
+        
         {/* Conditional rendering: show form only when isFormVisible is true */}
         {isFormVisible && (
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -75,7 +79,7 @@ const DataCapture = () => {
             </div>
 
             <div>
-              <label>Subject Initials:</label>
+              <label><FontAwesomeIcon icon={faAsterisk} style={{ color: 'red', marginRight: '8px', width:'5px' }} />Subject Initials:</label>
               <input
                 type="text"
                 {...register("subjectInitials", { required: true })}
@@ -83,7 +87,7 @@ const DataCapture = () => {
             </div>
 
             <div>
-              <label>Subject InfoId:</label>
+              <label><FontAwesomeIcon icon={faAsterisk} style={{ color: 'red', marginRight: '8px', width:'5px' }} />Subject InfoId:</label>
               <input
                 type="text"
                 {...register("subjectInfoId", { required: true })}
@@ -91,7 +95,7 @@ const DataCapture = () => {
             </div>
 
             <div>
-              <label>Enrollment Date:</label>
+              <label><FontAwesomeIcon icon={faAsterisk} style={{ color: 'red', marginRight: '8px', width:'5px' }} />Enrollment Date:</label>
               <input
                 type="date"
                 {...register("enrollmentDate", { required: true })}

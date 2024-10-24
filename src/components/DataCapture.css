@@ -1,14 +1,18 @@
 /* Container for the whole form */
 .DataCapture {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     max-width: auto;
     margin: auto;
     background-color: #f7f7f7;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
   }
-  
+  p{
+    color: #333333;
+    font: 17px;
+  }
   /* Table styles for Study Name, Protocol ID, etc. */
   table {
     width: 100%;
@@ -18,16 +22,30 @@
   
   table th, table td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
     border: 1px solid #ddd;
     background-color: #f2f2f2;
+    font-size: 14px;
   }
   
   table th {
      
-    color: rgb(11, 11, 11);
+    color: #000000;
   }
-  
+  .subject-registration{
+    color: #ffffff;
+    background: #362CA6;
+    display: flex;
+    padding: 5px;
+    font-size: 14px;
+    height: 30px;
+    /* text-align: center; */
+   
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   /* Form input field styles */
   form div {
     margin-bottom: 15px;
@@ -37,6 +55,8 @@
     display: inline-block;
     margin-bottom: 8px;
     font-weight: bold;
+    width:15%;
+    
   }
   
   form input[type="text"],
@@ -49,6 +69,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    
   }
   
   form input[type="text"]:read-only {
@@ -57,6 +78,7 @@
   
   form textarea {
     resize: vertical;
+   
     height: 50px;
   }
   
@@ -103,7 +125,7 @@
   }
   
   /* 'Go' button style */
-  button {
+  /* button {
     padding: 10px 20px;
     background-color: hsl(272, 92%, 46%);
     color: white;
@@ -115,7 +137,7 @@
   
   button:hover {
     background-color: #0056b3;
-  }
+  } */
   .subject-status{
     padding-top: 20px;
   }
