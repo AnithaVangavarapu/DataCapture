@@ -1,6 +1,9 @@
 import "./DataCapture.css";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock,faSquare,faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+
 const DataCapture = () => {
   const { register, handleSubmit, reset, setValue } = useForm({
     defaultValues: {
@@ -133,18 +136,18 @@ const DataCapture = () => {
       </div>
       <div className="subject-status">
         <tr>
-          <td>SubjectStatus-Not Started</td>
-          <td>SybjectStatus-Withdrawn</td>
-          <td>SubjectStatus-Excluded</td>
-          <td>SubjectStatus-Completed</td>
-          <td>SubjectStatus-InProgress</td>
+          <td><FontAwesomeIcon icon={faSquare} style={{ color: 'yellow', marginRight: '8px' }} />SubjectStatus-Not Started</td>
+          <td><FontAwesomeIcon icon={faSquare} style={{ color: 'brown', marginRight: '8px' }} />SybjectStatus-Withdrawn</td>
+          <td><FontAwesomeIcon icon={faSquare} style={{ color: 'red', marginRight: '8px' }} />SubjectStatus-Excluded</td>
+          <td><FontAwesomeIcon icon={faSquare} style={{ color: 'green', marginRight: '8px' }} />SubjectStatus-Completed</td>
+          <td><FontAwesomeIcon icon={faSquare} style={{ color: 'blue', marginRight: '8px' }} />SubjectStatus-InProgress</td>
         </tr>
         <tr>
-          <td>Subject Not Soft Locked</td>
-          <td>Subject Not Hard Locked</td>
-          <td>Subject Soft Locked</td>
-          <td>Subject Hard Locked</td>
-          <td>Open Query</td>
+          <td><FontAwesomeIcon icon={faLock} style={{ color: 'grey', marginRight: '8px' }} />Subject Not Soft Locked</td>
+          <td><FontAwesomeIcon icon={faLock} style={{ color: 'red', marginRight: '8px' }} />Subject Not Hard Locked</td>
+          <td><FontAwesomeIcon icon={faLock} style={{ color: 'grey', marginRight: '8px' }} />Subject Soft Locked</td>
+          <td><FontAwesomeIcon icon={faLock} style={{ color: 'red', marginRight: '8px' }} />Subject Hard Locked</td>
+          <td><FontAwesomeIcon icon={faCircleQuestion} style={{ color: 'grey', marginRight: '8px' }} />Open Query</td>
         </tr>
       </div>
     </div>
