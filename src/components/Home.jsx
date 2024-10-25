@@ -3,7 +3,4 @@ import DataCapture from './DataCapture';
 const Home= ()=>{
    return "Home";
 }
-
-
-
 export default Home;
