@@ -1,0 +1,19 @@
+.footer{
+    padding: 20px;
+    
+    
+}
+.footer-1{
+    background-color: #ffb03f;
+    text-align:end ;
+}
+.footer-2{
+    margin-top: 2px;
+    background-color: gainsboro;
+    text-align: center;
+}
+.icon
+{
+color: aliceblue;
+margin-left: 5px;
+}

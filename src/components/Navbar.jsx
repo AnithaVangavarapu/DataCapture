@@ -1,20 +1,51 @@
-import react from "react";
-import {  useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    if (value === "Visit Calendar") {
+      navigate("/VisitCalendar");
+    } else if (value === "Data Capture") {
+      navigate("/DataCapture");
+    }
+  };
+
   return (
-    <div>
+    <div className="navbar">
       <button onClick={() => navigate("/")}>Home</button>
-      <button onClick={() => navigate("/StudyDocuments")}>StudyDocuments</button>
-      <button onClick={() => navigate("/DataCapture")}>DataCapture</button>
-      <button onClick={() => navigate("/QueryResolutionSystem")}>QyeryResolutionSystem</button>
-      <button onClick={() => navigate("/DataLoader")}>DataLoader</button>
-      <button onClick={() => navigate("/StandardReports")}>StandardReports</button>
-      <button onClick={() => navigate("/DataExtraction")}>DataExtraction</button>
-      <button onClick={() => navigate("/AiMedicalCoding")}>AI Medical Coding</button>
-     
+      <button onClick={() => navigate("/StudyDocuments")}>Study Documents</button>
+      <div>
+        <select defaultValue="Data Capture" className="select" onChange={handleChange}>
+          <option hidden>Data Capture</option>
+          <option value="Visit Calendar">Visit Calendar</option>
+          <option value="Data Capture">Data Capture</option>
+        </select>
+        <FontAwesomeIcon icon={faCaretRight} className="icon" />
+      </div>
+      <button onClick={() => navigate("/QueryResolutionSystem")}>
+        Query Resolution System
+        <FontAwesomeIcon icon={faCaretRight} className="icon" />
+      </button>
+      <button onClick={() => navigate("/DataLoader")}>Data Loader</button>
+      <button onClick={() => navigate("/StandardReports")}>Standard Reports</button>
+      <button onClick={() => navigate("/DataExtraction")}>Data Extraction</button>
+      <button onClick={() => navigate("/AiMedicalCoding")}>
+        AI Medical Coding
+        <FontAwesomeIcon icon={faCaretRight} className="icon" />
+      </button>
     </div>
-    // <ul>
+  );
+};
+
+export default Navbar;
+
+// <ul>
     //     <li>
     //         <Link to="/">Home</Link>
     //     </li>
@@ -40,6 +71,3 @@ const Navbar = () => {
     //         <Link to="/AiMedicalCoding">AiMedicalCoding</Link>
     //     </li>
     // </ul>
-  );
-};
-export default Navbar;

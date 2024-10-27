@@ -1,8 +1,32 @@
-.header{
-    display: flex;
-    flex-direction: row;
+.header {
+       display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically centered */
+    padding: 0px; /* Add padding around the header */
 }
-img{
-    width: 164px;
-    height: 120px;
+
+.logo {
+    width: 100px; /* Set a smaller width for the logo */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100px; /* Limit the height of the logo */
+    padding-left: 10px;
 }
+
+.title-container {
+    flex: 1; /* Allow the title container to grow and center elements */
+    text-align: center; /* Center the h1 text */
+    color: gray;
+}
+
+
+h5, 
+.link {
+    
+    display: flex; /* Use flex to align items in a row */
+    justify-content: flex-end; /* Align to the right */
+    align-items: center; /* Center vertically */
+    
+    margin-left: 10px;
+    padding-right: 15px;
+}
+

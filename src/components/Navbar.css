@@ -1,0 +1,49 @@
+.navbar{
+    background-color: #06456B;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+button{
+      background-color:transparent;
+      border: none;
+      color: aliceblue;
+      
+      
+}
+.select {
+    background-color:transparent;
+      cursor: pointer;
+      color: aliceblue;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    background: transparent; /* Make background transparent */
+    border: 1px solid #06456B; /* Optional: Custom border */
+    padding: 10px; /* Add some padding */
+    outline: none; /* Remove outline */
+}
+
+/* Optional: Custom arrow */
+.select::after {
+    content: ''; /* Optional: Custom content */
+    position: absolute;
+    right: 10px; /* Adjust position */
+    top: 50%;
+    transform: translateY(-50%); /* Center the arrow vertically */
+    pointer-events: none; /* Make sure it doesn't block clicks */
+}
+
+
+select option{
+    color: black;
+}
+
+.icon
+{
+color: aliceblue;
+margin-left: 10px;
+}
