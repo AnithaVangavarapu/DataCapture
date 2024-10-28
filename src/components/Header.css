@@ -1,10 +1,24 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically centered */
-  padding: 0px; /* Add padding around the header */
+  align-items: center; 
+  padding: 0px; 
+} */
+.header{
+  display:flex;
+  flex-direction: column;
+  padding-bottom: 0px;
 }
-
+.header1{
+  display: flex;
+  
+}
+.header2{
+  
+  display: flex;
+ 
+  text-align: right;
+}
 .logo {
   width: 100px; /* Set a smaller width for the logo */
   height: auto; /* Maintain aspect ratio */
@@ -20,10 +34,12 @@
 
 h5,
 .link {
-  display: flex; /* Use flex to align items in a row */
-  justify-content: flex-end; /* Align to the right */
-  align-items: center; /* Center vertically */
-
+  /* display: flex;  */
+  /* Use flex to align items in a row */
+  /* justify-content: flex-end;  */
+  /* Align to the right */
+  align-items:center; /* Center vertically */
   margin-left: 10px;
   padding-right: 15px;
+  margin-top: 50px;
 }

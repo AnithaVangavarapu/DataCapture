@@ -155,9 +155,9 @@ const DataCapture = () => {
             </div>
 
             <div>
-              <button type="submit">Submit</button>
+              <button type="submit" className="submit-button">Submit</button>
 
-              <button type="button" onClick={handleReset}>
+              <button type="button" onClick={handleReset} className="reset-button">
                 Reset
               </button>
             </div>
