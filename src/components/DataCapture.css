@@ -105,42 +105,55 @@
   }
   
   /* Styles for the Subjects Dashboard */
-  h2 {
+  /* h2 {
     margin-top: 30px;
     font-size: 24px;
     color: #333;
-  }
+  } */
   
-  label {
+  /* label {
     display: inline-block;
     margin-right: 10px;
   }
-  
-  select {
+   */
+  /* select {
     padding: 8px;
     font-size: 16px;
     margin-left: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
-  }
-  
-  /* 'Go' button style */
-  /* button {
-    padding: 10px 20px;
-    background-color: hsl(272, 92%, 46%);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 200px;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
   } */
+  .subject-dashboard{
+    display:flex;
+    flex-direction: column;
+    font-size: 14px;
+    
+  }
+  .subject-dashboard-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .subject-dashboard h1{
+    font-size: 14px;
+  }
+  .b1, .b2{
+    color: #e9ecef;
+    background-color:#362CA6 ;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    
+  }
+ 
+  .b2{
+      justify-content: flex-end;
+  }
   .subject-status{
     padding-top: 20px;
+    
   }
 .subject-status tr td{
- padding-right: 30px;
+ padding-right: 50px;
+ font-size: 14px;
 }
