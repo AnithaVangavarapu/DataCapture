@@ -6,7 +6,7 @@ const Header= ()=>{
         <div className='header'>
         <div className='header1'>
         <img className="logo" src={require('./clinion-logo-2.png')} alt="Clinion Logo"/>
-        <h1 className="title-container">Test Mode</h1>
+        <div className="title-container">Test Mode</div>
         </div>
         <div className='header2'>
         <h5>Welcome</h5>

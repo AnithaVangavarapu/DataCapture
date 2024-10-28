@@ -7,17 +7,21 @@
 .header{
   display:flex;
   flex-direction: column;
-  padding-bottom: 0px;
+  
 }
 .header1{
   display: flex;
-  
+  width: 100%;
+  padding-bottom: 0px;
 }
 .header2{
-  
   display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ margin-right: 10px;
+
+ /* flex-direction: row; */
  
-  text-align: right;
 }
 .logo {
   width: 100px; /* Set a smaller width for the logo */
@@ -27,19 +31,12 @@
 }
 
 .title-container {
-  flex: 1; /* Allow the title container to grow and center elements */
+  flex: 1;
+    /* Allow the title container to grow and center elements */
   text-align: center; /* Center the h1 text */
+font-size: 24px;
   color: gray;
-}
-
-h5,
-.link {
-  /* display: flex;  */
-  /* Use flex to align items in a row */
-  /* justify-content: flex-end;  */
-  /* Align to the right */
-  align-items:center; /* Center vertically */
-  margin-left: 10px;
-  padding-right: 15px;
-  margin-top: 50px;
+  margin-top: 25px;
+  
+  
 }
